@@ -1,11 +1,11 @@
 ########################################
 # Teste 1B          
-# Nome(s): 
+# Nome(s): James Andrade Moreno Jr e Renann Camargo
 ########################################
 
-#ATENÃ‡ÃƒO: VocÃª precisa fazer o download do arquivo chustomer_churn.csv e
-#           deixÃ¡-lo na mesma pasta que o arquivo teste1b.R
-#         Depois, Fornecer o caminho completo atÃ© o arquivo csv.
+#ATENÇÃO: Você precisa fazer o download do arquivo chustomer_churn.csv e
+#           deixá-lo na mesma pasta que o arquivo teste1b.R
+#         Depois, Fornecer o caminho completo até o arquivo csv.
 #         Exemplos:
 #              -Windows:
 #                  "C:/Users/Andre/Downloads/customer_churn.csv"
@@ -19,66 +19,73 @@ customer_churn = read.table("customer_churn.csv", sep=",", header = TRUE, string
 ########################################
 # Item 1 (0.5 ponto)
 ########################################
+customer_churn                                  #7500 clientes
+customer_churn <- unique(customer_churn)        
+customer_churn                                  #7043 clientes exclusivos
 
 ########################################
 # Item 2 (0.5 ponto)
 ########################################
+customer_churn$Partner <- as.logical(customer_churn$Partner == "Yes")
+customer_churn$Dependents <- as.logical(customer_churn$Dependents == "Yes")
+customer_churn$Churn <- as.logical(customer_churn$Churn == "Yes")
+customer_churn
 
 ########################################
 # Item 3 (0.5 ponto)
 ########################################
 
-#max_tenure <- #salvar resultado nessa variÃ¡vel
+#max_tenure <- #salvar resultado nessa variável
 
 ########################################
 # Item 4 (1.0 ponto)
 ########################################
 
-#max_tenure_50 <- #salvar resultado nessa variÃ¡vel
+#max_tenure_50 <- #salvar resultado nessa variável
 
 ########################################
 # Item 5 (1.0 ponto)
 ########################################
 
-#min_tenure_mtm <- #salvar resultado nessa variÃ¡vel
+#min_tenure_mtm <- #salvar resultado nessa variável
 
 ########################################
 # Item 6a (1.0 ponto)
 ########################################
 
-#total_mtm <- #salvar resultado nessa variÃ¡vel
-#total_year <- #salvar resultado nessa variÃ¡vel
-#total_two_year <- #salvar resultado nessa variÃ¡vel
+#total_mtm <- #salvar resultado nessa variável
+#total_year <- #salvar resultado nessa variável
+#total_two_year <- #salvar resultado nessa variável
 
 ########################################
 # Item 6b (0.5 ponto)
 ########################################
 
-#regular_customers <- #salvar resultado nessa variÃ¡vel
+#regular_customers <- #salvar resultado nessa variável
 
 
 ########################################
 # Item 7a (0.5 ponto)
 ########################################
 
-#customers_with_dependents <- #salvar resultado nessa variÃ¡vel
+#customers_with_dependents <- #salvar resultado nessa variável
 
 ########################################
 # Item 7b (0.5 ponto)
 ########################################
 
-#customers_mtm <- #salvar resultado nessa variÃ¡vel
-#customers_year <- #salvar resultado nessa variÃ¡vel
-#customers_two_year <- #salvar resultado nessa variÃ¡vel
+#customers_mtm <- #salvar resultado nessa variável
+#customers_year <- #salvar resultado nessa variável
+#customers_two_year <- #salvar resultado nessa variável
 
 ########################################
 # Item 7c (0.5 ponto)
 ########################################
 
-#customers_two_years <- #salvar resultado nessa variÃ¡vel
+#customers_two_years <- #salvar resultado nessa variável
 
 ########################################
 # Item 7d (0.5 ponto)
 ########################################
 
-#accumulated_discount <- #salvar resultado nessa variÃ¡vel
+#accumulated_discount <- #salvar resultado nessa variável

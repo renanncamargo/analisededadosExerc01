@@ -1,6 +1,6 @@
 ########################################
 # Teste 1a          
-# Nome(s): 
+# Nome(s): James Andrade Moreno Jr e Renann Camargo
 ########################################
 
 ids <- c(172742, 172773, 172825, 172839, 172967, 173149, 173204, 173370, 174096, 174355, 174437, 174487, 174488, 174928, 175380, 175832, 176859, 176914, 176940, 177388, 177554, 177609, 177643, 177825, 177925, 178085, 178137, 178377, 178397, 178525, 178664, 178674, 178740, 178779, 181987, 182039, 182049, 182901, 183024, 183143, 183517, 183984, 184400, 185247, 185820, 186218, 187014, 187217, 188078, 188494, 188548)
@@ -33,10 +33,115 @@ dp4 <- sd(notas$p4)
 # Item 3 (1.0 ponto)
 ########################################
 
-medpond <- rowMeans(notas)
+# Nota P1
+#Verifica primeira condição de peso
+cond1p1 <- notas$p1<2.5
+cond1p1
+cond1p1 <- cond1p1*2
+cond1p1
+#Verifica segunda condição de peso
+cond2p1 <- notas$p1
+cond2p1  <- (2.5 <=notas$p1 & notas$p1 <5)
+cond2p1  <- cond2p1*1.5
+cond2p1
+#Verifica terceira condição de peso  
+cond3p1 <- notas$p1
+cond3p1  <- (notas$p1>=5)
+cond3p1  <- cond3p1*1.0
+cond3p1
+#Soma os pesos em um unico vetor
+condTotal <- cond1p1 + cond2p1 + cond3p1
+condTotal
+#Calcula nota x peso
+nota_peso1 <- notas$p1*condTotal
+nota_peso1
+
+# Nota P2
+#Verifica primeira condição de peso
+cond1p2 <- notas$p2<2.5
+cond1p2
+cond1p2 <- cond1p2*2
+cond1p2
+#Verifica segunda condição de peso
+cond2p2 <- notas$p2
+cond2p2 <- (2.5 <=notas$p2 & notas$p2 <5)
+cond2p2 <- cond2p2*1.5
+cond2p2
+#Verifica terceira condição de peso
+cond3p2 <- notas$p2
+cond3p2 <- (notas$p2>=5)
+cond3p2 <- cond3p2*1.0
+cond3p2
+#Soma dos pesos em um unico vetor
+condTotalp2 <- cond1p2 + cond2p2 + cond3p2
+condTotalp2
+#Calculo nota x peso
+p2
+nota_peso2 <- notas$p2*condTotalp2
+nota_peso2
+
+# Nota P3
+#Verifica primeira condição de peso
+cond1p3 <- notas$p3<2.5
+cond1p3
+cond1p3 <- cond1p3*2
+cond1p3
+#Verifica segunda condição de peso
+cond2p3 <- notas$p3
+cond2p3 <- (2.5 <=notas$p3 & notas$p3 <5)
+cond2p3 <- cond2p3*1.5
+cond2p3
+#Verifica terceira condição de peso
+cond3p3 <- notas$p3
+cond3p3 <- (notas$p3>=5)
+cond3p3 <- cond3p3*1.0
+cond3p3
+#Soma dos pesos em um unico vetor
+condTotalp3 <- cond1p3 + cond2p3 + cond3p3
+condTotalp3
+#Calculo nota x peso
+p3
+nota_peso3 <- notas$p3*condTotalp3
+nota_peso3
+
+# Nota P4
+#Verifica primeira condição de peso
+cond1p4 <- notas$p4<2.5
+cond1p4
+cond1p4 <- cond1p4*2
+cond1p4
+#Verifica segunda condição de peso
+cond2p4 <- notas$p4
+cond2p4 <- (2.5 <=notas$p4 & notas$p4 <5)
+cond2p4 <- cond2p4*1.5
+cond2p4
+#Verifica terceira condição de peso
+cond3p4 <- notas$p4
+cond3p4 <- (notas$p4>=5)
+cond3p4 <- cond3p4*1.0
+cond3p4
+#Soma dos pesos em um unico vetor
+condTotalp4 <- cond1p4 + cond2p4 + cond3p4
+condTotalp4
+#Calculo nota x peso
+p4
+nota_peso4 <- notas$p4*condTotalp4
+nota_peso4
+
+#Media ponderada das notas
+mediaNota <- (nota_peso1+nota_peso2+nota_peso3+nota_peso4)/(condTotal+condTotalp2+condTotalp3+condTotalp4)
+#Média ponderada com duas casas decimais
+medpond <- round(mediaNota,2)
+medpond
 
 ########################################
 # Item 4 (1.0 ponto)
 ########################################
 
-#notasrank <-
+#Atribui a média de cada aluno
+notas <- cbind(notas, medpond)
+notas
+
+#Atribui as notas de maneira ordenada, de acordo com a média ponderada
+notasrank <- notas$ids[order(notas$medpond, decreasing = TRUE)]
+notasrank
