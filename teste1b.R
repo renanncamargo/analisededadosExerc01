@@ -67,6 +67,22 @@ min_tenure_mtm <- customer_churn$customerID[((customer_churn$Contract == "Month-
 # Item 6a (1.0 ponto)
 ########################################
 
+clientesMensais <- customer_churn$MonthlyCharges[((customer_churn$Contract == "Month-to-month") == "TRUE")
+                                                 & ((customer_churn$Churn == "TRUE") == "TRUE")]
+total_mtm <- sum(clientesMensais)
+total_mtm
+
+ClientesAnuais <- customer_churn$MonthlyCharges[((customer_churn$Contract == "One year") == "TRUE")
+                                                   & ((customer_churn$Churn == "TRUE") == "TRUE")]
+total_year <- sum(ClientesAnuais)
+total_year
+
+ClientesDoisAnos <- customer_churn$MonthlyCharges[((customer_churn$Contract == "Two year") == "TRUE")
+                                                & ((customer_churn$Churn == "TRUE") == "TRUE")]
+total_two_year <- sum(ClientesDoisAnos)
+total_two_year
+
+
 #total_mtm <- #salvar resultado nessa variável
 #total_year <- #salvar resultado nessa variável
 #total_two_year <- #salvar resultado nessa variável
@@ -75,6 +91,11 @@ min_tenure_mtm <- customer_churn$customerID[((customer_churn$Contract == "Month-
 # Item 6b (0.5 ponto)
 ########################################
 
+ClientesDoisAnos <- (((customer_churn$Contract == "Two year") == "TRUE")
+                       & ((customer_churn$Churn == "TRUE") == "TRUE"))
+
+regular_customers <- sum(ClientesDoisAnos)
+regular_customers
 #regular_customers <- #salvar resultado nessa variável
 
 
@@ -82,11 +103,35 @@ min_tenure_mtm <- customer_churn$customerID[((customer_churn$Contract == "Month-
 # Item 7a (0.5 ponto)
 ########################################
 
+ClientesCasados <- (((customer_churn$Partner == "TRUE") == "TRUE")
+                     & ((customer_churn$Dependents == "TRUE") == "TRUE")
+                    & ((customer_churn$Churn == "FALSE") == "TRUE"))
+ClientesCasados
+
+customers_with_dependents <- sum(ClientesCasados)
+customers_with_dependents
+
+
 #customers_with_dependents <- #salvar resultado nessa variável
 
 ########################################
 # Item 7b (0.5 ponto)
 ########################################
+
+clientesMen <- (((customer_churn$Contract == "Month-to-month") == "TRUE")
+                                                 & ((customer_churn$Churn == "FALSE") == "TRUE"))
+customers_mtm <- sum(clientesMen)
+customers_mtm
+
+ClientesAn <- (((customer_churn$Contract == "One year") == "TRUE")
+                 & ((customer_churn$Churn == "FALSE") == "TRUE"))
+customers_year <- sum(ClientesAn)
+customers_year
+
+ClientesDoisAn <- (((customer_churn$Contract == "Two year") == "TRUE")
+                     & ((customer_churn$Churn == "FALSE") == "TRUE"))
+customers_two_year <- sum(ClientesDoisAn)
+customers_two_year
 
 #customers_mtm <- #salvar resultado nessa variável
 #customers_year <- #salvar resultado nessa variável
