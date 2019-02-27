@@ -35,11 +35,15 @@ customer_churn
 # Item 3 (0.5 ponto)
 ########################################
 
+ 
+max_tenure <- customer_churn$customerID[(customer_churn$tenure == max(customer_churn$tenure)) == "TRUE"]
+max_tenure
 #max_tenure <- #salvar resultado nessa variável
 
 ########################################
 # Item 4 (1.0 ponto)
 ########################################
+
 
 #max_tenure_50 <- #salvar resultado nessa variável
 
