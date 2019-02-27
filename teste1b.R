@@ -44,12 +44,22 @@ max_tenure
 # Item 4 (1.0 ponto)
 ########################################
 
-
+max_tenure_50 <- customer_churn$customerID[((customer_churn$Contract == "Month-to-month") == "TRUE")
+                                             & ((customer_churn$MonthlyCharges >= 50) == "TRUE")
+                                             & ((customer_churn$tenure == max(customer_churn$tenure)) == "TRUE")]
+max_tenure_50
 #max_tenure_50 <- #salvar resultado nessa variável
 
 ########################################
 # Item 5 (1.0 ponto)
 ########################################
+
+#Retorna a quantidade de faturas paga de cada cliente mensal
+ternureMonth <- customer_churn$tenure[((customer_churn$Contract == "Month-to-month") == "TRUE")]
+
+
+min_tenure_mtm <- customer_churn$customerID[((customer_churn$Contract == "Month-to-month") == "TRUE")
+                                           & ((customer_churn$tenure == min(ternureMonth)) == "TRUE")]
 
 #min_tenure_mtm <- #salvar resultado nessa variável
 
