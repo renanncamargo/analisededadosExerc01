@@ -68,17 +68,17 @@ min_tenure_mtm <- customer_churn$customerID[((customer_churn$Contract == "Month-
 ########################################
 
 clientesMensais <- customer_churn$MonthlyCharges[((customer_churn$Contract == "Month-to-month") == "TRUE")
-                                                 & ((customer_churn$Churn == "TRUE") == "TRUE")]
+                                                 & ((customer_churn$Churn == "FALSE") == "TRUE")]
 total_mtm <- sum(clientesMensais)
 total_mtm
 
 ClientesAnuais <- customer_churn$MonthlyCharges[((customer_churn$Contract == "One year") == "TRUE")
-                                                & ((customer_churn$Churn == "TRUE") == "TRUE")]
+                                                & ((customer_churn$Churn == "FALSE") == "TRUE")]
 total_year <- sum(ClientesAnuais)
 total_year
 
 ClientesDoisAnos <- customer_churn$MonthlyCharges[((customer_churn$Contract == "Two year") == "TRUE")
-                                                  & ((customer_churn$Churn == "TRUE") == "TRUE")]
+                                                  & ((customer_churn$Churn == "FALSE") == "TRUE")]
 total_two_year <- sum(ClientesDoisAnos)
 total_two_year
 
@@ -91,7 +91,7 @@ total_two_year
 # Item 6b (0.5 ponto)
 ########################################
 
-customer_maior1 <- customer_churn$customerID[(customer_churn$Churn == "TRUE") 
+customer_maior1 <- customer_churn$customerID[(customer_churn$Churn == "FALSE") 
                                              & ((customer_churn$tenure) > 12)]
 regular_customers <- length(customer_maior1)
 regular_customers
@@ -104,7 +104,7 @@ regular_customers
 
 ClientesCasados <- (((customer_churn$Partner == "TRUE") == "TRUE")
                     & ((customer_churn$Dependents == "TRUE") == "TRUE")
-                    & ((customer_churn$Churn == "FALSE") == "TRUE"))
+                    & ((customer_churn$Churn == "TRUE") == "TRUE"))
 ClientesCasados
 
 customers_with_dependents <- sum(ClientesCasados)
@@ -118,17 +118,17 @@ customers_with_dependents
 ########################################
 
 clientesMen <- (((customer_churn$Contract == "Month-to-month") == "TRUE")
-                & ((customer_churn$Churn == "FALSE") == "TRUE"))
+                & ((customer_churn$Churn == "TRUE") == "TRUE"))
 customers_mtm <- sum(clientesMen)
 customers_mtm
 
 ClientesAn <- (((customer_churn$Contract == "One year") == "TRUE")
-               & ((customer_churn$Churn == "FALSE") == "TRUE"))
+               & ((customer_churn$Churn == "TRUE") == "TRUE"))
 customers_year <- sum(ClientesAn)
 customers_year
 
 ClientesDoisAn <- (((customer_churn$Contract == "Two year") == "TRUE")
-                   & ((customer_churn$Churn == "FALSE") == "TRUE"))
+                   & ((customer_churn$Churn == "TRUE") == "TRUE"))
 customers_two_year <- sum(ClientesDoisAn)
 customers_two_year
 
@@ -140,7 +140,7 @@ customers_two_year
 # Item 7c (0.5 ponto)
 ########################################
 
-customer_ternure_2 <- customer_churn$customerID[(customer_churn$Churn == "FALSE") 
+customer_ternure_2 <- customer_churn$customerID[(customer_churn$Churn == "TRUE") 
                                                 & (customer_churn$tenure>=24)]
 customers_two_years <- length(customer_ternure_2)
 customers_two_years #salvar resultado nessa variável
@@ -152,7 +152,7 @@ customers_two_years #salvar resultado nessa variável
 ########################################
 
 #Criando vetor com preço pago por cada cliente
-vetcharge <- customer_churn$MonthlyCharges[(customer_churn$Churn == "FALSE")]
+vetcharge <- customer_churn$MonthlyCharges[(customer_churn$Churn == "TRUE")]
 vetcharge
 check2 <- length(vetcharge)
 check2  # 5174 valores de faturas
